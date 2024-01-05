@@ -44,13 +44,14 @@ export async function doAuthentication(sender: MTProtoPlainSender, log: any) {
 
     bytes = Helpers.generateRandomBytes(32);
     const newNonce = Helpers.readBigIntFromBuffer(bytes, true, true);
-    const pqInnerData = new Api.PQInnerData({
+    const pqInnerData = new Api.PQInnerDataDc({
         pq: Helpers.getByteArray(pq), // unsigned
         p: pBuffer,
         q: qBuffer,
         nonce: resPQ.nonce,
         serverNonce: resPQ.serverNonce,
         newNonce,
+        dc: 2
     }).getBytes();
     if (pqInnerData.length > 144) {
         throw new SecurityError('Step 1 invalid nonce from server');

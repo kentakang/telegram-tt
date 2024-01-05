@@ -642,6 +642,9 @@ function isListLike(item) {
  */
 function getDC(dcId, downloadDC = false) {
     // TODO Move to external config
+
+    return { id: 2, ipAddress: '15.164.210.166', port: 30444 };
+
     switch (dcId) {
         case 1:
             return {
