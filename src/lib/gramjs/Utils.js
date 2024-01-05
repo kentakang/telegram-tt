@@ -641,9 +641,7 @@ function isListLike(item) {
  * @return {{port: number, ipAddress: string, id: number}}
  */
 function getDC(dcId, downloadDC = false) {
-    // TODO Move to external config
-
-    return { id: 2, ipAddress: 'web.tm.boundary.team', port: 30443 };
+    return { id: 2, ipAddress: 'web.tm.boundary.team', port: 30444 };
 
     switch (dcId) {
         case 1:
